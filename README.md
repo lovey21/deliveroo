@@ -23,7 +23,7 @@ Features not supported
     MONTH,
     DAY_OF_WEEK;
 
-2) question marks, @ 
+2) question marks, @ , #
 
 Implementation Details
 classes
@@ -45,3 +45,8 @@ CronExpressionFieldType
 Exception
 
 InvalidCronExpressionException
+
+
+Way to Run
+
+After cloning the project, just run the following command to get your cron string parsed. This is assuming you have javaEE installed:
