@@ -1,18 +1,29 @@
 # deliveroo
-DeliverooCodeAssignmentTest
+Deliveroo CodeAssignment  Test
 
 Supported features:
 
 Cron Expressions must consist of five "parts" followed by a command.
-asterisk (*)
-basic slashes, for some time interval x (e.g. `*/15)
-basic commas (e.g. 1,2)
-hyphens (e.g. 1-7)
+
+Standard format includes five time fields (minute, hour, day of
+month, month, and day of week) plus a command.
+
+Following special characters can be included along with fixed value.
+1) asterisk (*)
+2) basic slashes, for some time interval x (e.g. `*/15)
+3) basic commas (e.g. 1,2)
+4) hyphens (e.g. 1-7)
 
 Features not supported 
 
-words in place of Month or Day of week
-question marks, @ 
+1) words in place of 
+    MINUTE,
+    HOUR,
+    DAY_OF_MONTH,
+    MONTH,
+    DAY_OF_WEEK;
+
+2) question marks, @ 
 
 Implementation Details
 classes
