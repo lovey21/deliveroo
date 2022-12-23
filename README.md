@@ -52,3 +52,7 @@ Way to Run
 After cloning the project, just run the following command to get your cron string parsed. This is assuming you have javaEE installed:
 
 java Main */15 0 1,15 * 1-5 /usr/bin/find
+
+There is a Test class for proper testing of the valid and invalid cron expressions "CronExpressionTest" implementing junit
+
+
