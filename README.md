@@ -1,20 +1,22 @@
 # deliveroo
-Deliveroo CodeAssignment  Test
+Deliveroo CodeAssignment  
+Test
+
+The Main.java class executes the cronExpressionParser.parse() method which takes input the cron expression entered through java args 
 
 Supported features:
 
-Cron Expressions must consist of five "parts" followed by a command.
+Valid Cron Expressions must consist of five time fields (minute, hour, day of
+month, month, and day of week) followed by a command.
 
-Standard format includes five time fields (minute, hour, day of
-month, month, and day of week) plus a command.
 
-Following special characters can be included along with fixed value.
+Following special characters can be included along with the fixed value.
 1) asterisk (*)
 2) basic slashes, for some time interval x (e.g. `*/15)
 3) basic commas (e.g. 1,2)
 4) hyphens (e.g. 1-7)
 
-Features not supported 
+Following Features are not supported 
 
 1) words in place of 
     MINUTE,
@@ -25,11 +27,11 @@ Features not supported
 
 2) question marks, @ , #
 
-Implementation Details
-classes
+Implementation Details of Classes 
 
-CronExpressionParser implements CronParser 
-   implements the business logic to take in the valid cron expression and parses it.
+
+CronExpressionParser Implements Interface CronParser 
+  which includes the business logic to take in the valid cron expression and parses it.
    
 FieldParser
    implements the five fields parsing techniques based on different strategy like comma, slashes, asterik, hyphen
