@@ -1,8 +1,8 @@
 import java.util.*;
 public class Main {
     public static void main(String[] args) {
-        if (args.length != 6) {
-            System.err.println("Expected [minute] [hour] [day of month] [day of week] [command] but have got :" + Arrays.toString(args));
+        if (args.length != 1) {
+            System.err.println("Expected [minute] [hour] [day of month] [month] [day of week] [command] but have got :" + Arrays.toString(args));
             return;
         }
         try {
