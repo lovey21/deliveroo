@@ -8,11 +8,10 @@ public class FieldParser {
 
     private static final String SLASH = "/";
     private static final String EMPTY_STRING = "";
-    private static final String HASH_TAG = "#";
-    private static final String QUESTION_MARK_STRING = "?";
     private static final String ASTERISK = "*";
-    private static final char[] SPECIAL_CHARS_MINUS_STAR = new char[] {'-', ',' };// universally supported
-
+    private static final String HYPHEN = "-";
+    private static final String COMMA = ",";
+    
     private final CronExpressionFieldType type;
 
     private final String fieldExpression;
@@ -45,7 +44,7 @@ public class FieldParser {
     private void parseIntervals() throws InvalidCronExpressionException {
         if (fieldExpression.startsWith(ASTERISK)) {
             int interval = 1;
-            String[] intervals = fieldExpression.split("/");
+            String[] intervals = fieldExpression.split(SLASH);
             if (intervals.length > 2) {
                 throw new InvalidCronExpressionException("Number " + fieldExpression + " for " + type + "has too many intervals");
             }
@@ -57,7 +56,7 @@ public class FieldParser {
     }
 
     private void parseRangeOfValues() throws InvalidCronExpressionException {
-        String[] range = fieldExpression.split("-");
+        String[] range = fieldExpression.split(HYPHEN);
         if (range.length == 2) {
             int start = parseNumber(range[0]);
             int end = parseNumber(range[1]);
@@ -66,7 +65,7 @@ public class FieldParser {
     }
 
     private void parseFixedValues() throws InvalidCronExpressionException {
-        String[] fixedDates = fieldExpression.split(",");
+        String[] fixedDates = fieldExpression.split(COMMA);
         if (fixedDates.length > 1) {
             //fixed values
             for (String date : fixedDates) {
