@@ -21,9 +21,9 @@ public class FieldParser {
         this.type = type;
         this.fieldExpression = fieldExpression;
 
-        parseFixedValues();
-        parseRangeOfValues();
-        parseIntervals();
+        parseAsteriskIntervals();
+        parseFixedValuesWithComma();
+        parseRangeOfValuesWithHyphen();
 
         if (values.isEmpty()) {
             values.add(parseNumber(fieldExpression));
@@ -41,7 +41,7 @@ public class FieldParser {
     }
 
 
-    private void parseIntervals() throws InvalidCronExpressionException {
+    private void parseAsteriskIntervals() throws InvalidCronExpressionException {
         if (fieldExpression.startsWith(ASTERISK)) {
             int interval = 1;
             String[] intervals = fieldExpression.split(SLASH);
@@ -55,7 +55,7 @@ public class FieldParser {
         }
     }
 
-    private void parseRangeOfValues() throws InvalidCronExpressionException {
+    private void parseRangeOfValuesWithHyphen() throws InvalidCronExpressionException {
         String[] range = fieldExpression.split(HYPHEN);
         if (range.length == 2) {
             int start = parseNumber(range[0]);
@@ -64,7 +64,7 @@ public class FieldParser {
         }
     }
 
-    private void parseFixedValues() throws InvalidCronExpressionException {
+    private void parseFixedValuesWithComma() throws InvalidCronExpressionException {
         String[] fixedDates = fieldExpression.split(COMMA);
         if (fixedDates.length > 1) {
             //fixed values
